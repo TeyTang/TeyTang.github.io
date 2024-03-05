@@ -59,21 +59,19 @@ div.scroll-container img {
 }
 h7 {text-align: center;}
 .outer {
-  display: grid;
-  grid-template: 1fr / 1fr;
-  place-items: center;
+  position: relative;
+  margin-top: 20px;
 }
-.outer > * {
-  grid-column: 1 / 1;
-  grid-row: 1 / 1;
+
+.top {
+  position: absolute;
+  margin-top: -10px;
+  background-color: green;
 }
-.outer .below {
-  z-index: 1;
-  background-color: aqua;
-}
-.outer .top {
-  z-index: 2;
-  background-color: brown;
+
+.bot {
+  position: absolute;
+  background-color: yellow;
 }
         
         h1{padding-top:20pt;color:#000000;font-size:20pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h2{padding-top:18pt;color:#000000;font-size:16pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h3{padding-top:16pt;color:#434343;font-size:14pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h4{padding-top:14pt;color:#666666;font-size:12pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h5{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h6{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;font-style:italic;orphans:2;widows:2;text-align:left}
@@ -106,7 +104,7 @@ function closeNav() {
       <div class="top" align="center">
             <h7>Tey Tang</h7>
         </div>
-        <div class="below" align="center">
+        <div class="bot" align="center">
          <img src="images/image1.png" alt="Avatar" class="avatar">
         </div>
 </div>
