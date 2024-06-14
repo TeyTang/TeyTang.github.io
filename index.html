@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<title>Tey Tang</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="w3-theme-indigo.css">
+<link rel="stylesheet" href="myStyle.css">
+
+
+<body onload = "init();">
+
+<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar">
+<div class="w3-container w3-theme-d2">
+  <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
+  <br>
+  <div class="w3-padding w3-center">
+    <img class="w3-circle" src="img/Tey Tang.png" alt="avatar" style="width:75%">
+  </div>
+    <div class="w3-container w3-center">
+    <p class="w3-xlarge">Tey Tang</p>
+    <p>App Developer</p>
+  
+</div>
+</div>
+<a class="w3-bar-item w3-button" href="about.html" target="iframe_a">About</a>
+<a class="w3-bar-item w3-button" href="education.html" target="iframe_a">Education</a>
+<a class="w3-bar-item w3-button" href="experience.html" target="iframe_a">Experience</a>
+<a class="w3-bar-item w3-button" href="skill.html" target="iframe_a">Skill</a>
+<a class="w3-bar-item w3-button" href="hobby.html" target="iframe_a">Hobby</a>
+<a class="w3-bar-item w3-button" href="project.html" target="iframe_a">View Projects</a>
+
+
+
+
+
+</nav>
+
+<header class="w3-top w3-bar w3-theme">
+  <button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
+  <h1 class="w3-bar-item">Resume</h1>
+</header>
+
+<iframe class = "content-iframe" src="about.html" id ="content"  name="iframe_a"  >
+
+</iframe>
+
+
+<!--
+<footer class="w3-container w3-bottom w3-theme w3-margin-top">
+  <h3>Footer</h3>
+</footer>
+-->
+
+<script src="myScript.js">
+
+</script>
+
+
+</body>
