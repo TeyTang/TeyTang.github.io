@@ -1,5 +1,5 @@
 function init(){
-document.getElementById("content").style="margin-left:00px";
+document.getElementById("content").style="margin-left:200px";
 
 
 document.getElementById("mySidebar").style="margin-top:90px";
