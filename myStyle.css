@@ -1,9 +1,9 @@
 
 .container {
-  position: relative;
-  overflow: auto;
+ position: relative;
+  overflow: hidden;
   width: 100%;
-  padding-top: 100%;
+  padding-top: 56.25%; 
   
 }
 
