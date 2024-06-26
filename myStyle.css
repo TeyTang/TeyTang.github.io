@@ -1,13 +1,6 @@
 
-.container {
- position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding-top: 56.25%; 
-  
-}
 
-/* Then style the iframe to fit in the container div with full height and width */
+/* Then style the iframe to fit in the container article with full height and width */
 .responsive-iframe {
  position: absolute;
   top: 0;
