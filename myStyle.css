@@ -1,7 +1,7 @@
 
 .container {
   position: relative;
-  overflow: auto;
+  overflow: inherit;
   width: 100%;
   heigh:100%;
   
