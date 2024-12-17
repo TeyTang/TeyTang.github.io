@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certification Page</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body onload="displayCertificate()">
+    <div class="certification-container">
+        <h1>Certification Page</h1>
+        <div class="experience-item">
+        
+        <label for="certDropdown">Select a Certificate:</label>
+        <select id="certDropdown" onchange="displayCertificate()">
+            <option value="">--Select a Certificate--</option>
+            <option value="cert/Advanced Electrical Troubleshooting.pdf" selected>Advanced Electrical Troubleshooting</option>
+            <option value="cert/Electricity Fundamentals.pdf">Electricity Fundamentals</option>
+            <option value="cert/EPA 608 Universal Certificate.pdf">EPA 608 Universal Certificate</option>
+            <option value="cert/Introduction to being an Electrician Apprentice.pdf">Introduction to being an Electrician Apprentice</option>
+            <option value="cert/Introduction to Programmable Logic Controllers.pdf">Introduction to Programmable Logic Controllers</option>
+            <option value="cert/Reading Electrical Drawings & Blueprints.pdf">Reading Electrical Drawings & Blueprints</option>
+            <option value="cert/Trade Math.pdf">Trade Math</option>
+            <option value="cert/Using A Multimeter.pdf">Using A Multimeter</option>
+            <option value="cert/Wiring Diagrams.pdf">Wiring Diagrams</option>
+        </select>
+    </div>
+    <div class="experience-item">
+        <div class="pdf-viewer">
+            <iframe id="pdfViewer" src="cert/Advanced Electrical Troubleshooting.pdf" width="600" height="400" style="display:block;"></iframe>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

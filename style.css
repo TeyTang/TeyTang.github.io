@@ -1,0 +1,148 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll caused by the menu */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the start (top) */
+    height: 100vh; /* Full height of the viewport */
+    background-color: #0fa4af; 
+    color: white;
+}
+
+.welcome-container {
+    margin-top: 25%; /* Push the content down by 25% of the viewport height */
+    text-align: center; /* Center text within the container */
+}
+
+.avatar {
+    width: 150px; /* Set the width of the avatar */
+    height: 150px; /* Set the height of the avatar */
+    overflow: hidden; /* Hide overflow */
+    border-radius: 50%; /* Make it circular */
+    margin: 20px auto; /* Center the avatar */
+    border: 3px solid #333; /* Optional: Add a border */
+}
+
+.avatar img {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove bottom space */
+}
+
+
+
+/* Menu Icon */
+.menu-icon {
+    position: fixed;
+    top: 0px; /* Adjust as needed */
+    left: 0px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    background-color: #024950;
+    color: white;
+    padding: 10px;
+    border-radius: 0px;
+}
+
+/* Side Menu Drawer */
+.side-menu {
+    position: fixed;
+    top: 00px; /* Adjust this value to position below the menu icon */
+    left: -100%; /* Hidden by default */
+    width: 80%;
+    max-width: 300px;
+    height: calc(100% - 0px); /* Adjust height to fit below the menu icon */
+    background-color: #003135;
+    color: white;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    z-index: 999;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.side-menu.open {
+    left: 0;
+}
+
+/* Menu Header */
+.menu-header {
+    padding: 20px; /* Add padding for spacing */
+    background-color: #003135; /* Optional: Different background for header */
+}
+
+/* Menu List */
+.menu-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.menu-list li {
+    padding: 10px; /* Add padding for list items */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.menu-list li:hover {
+    background-color: #0fa4af; /* Change background on hover */
+}
+
+
+.side-menu.open {
+    left: 0;
+}
+.menu-header h2 {
+    font-size: 18px; /* Adjust the size as needed */
+    margin: 0; /* Remove default margin */
+    padding: 10px; /* Add some padding if needed */
+}
+/* Backdrop */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: none;
+}
+
+.backdrop.active {
+    display: block;
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 80px; /* Adjust this value based on the height of your menu */
+    padding: 20px; /* Optional: Add some padding for better spacing */
+}
+
+
+.experience-container {
+    max-width: 800px; /* Limit the width for better readability */
+    margin: 0 auto; /* Center the container */
+}
+
+h1 {
+    text-align: center; /* Center the main heading */
+}
+
+.experience-item {
+    background-color: #964743; /* Dark background for each experience item */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside each item */
+    margin: 15px 0; /* Space */
+}
+
+.certification-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.pdf-viewer {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+}
