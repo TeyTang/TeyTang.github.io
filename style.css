@@ -122,8 +122,11 @@ body {
 
 
 .experience-container {
-    max-width: 800px; /* Limit the width for better readability */
+    width: 100%; /* Allow the container to take full width */
+    max-width: 800px; /* Still limit the width for larger screens */
     margin: 0 auto; /* Center the container */
+    padding: 10px; /* Add some padding for spacing */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 h1 {
@@ -142,7 +145,7 @@ h1 {
     margin: auto;
 }
 
-.pdf-viewer {
-    margin-top: 20px;
-    border: 1px solid #ccc;
+.pdf-viewer iframe {
+    width: 100%; /* Make the iframe responsive */
+    height: 400px; /* Keep the height fixed or adjust as needed */
 }
