@@ -15,8 +15,8 @@ function showContent(category) {
         education: "education.html",
         certifications: "certifications.html",
         skills: "skills.html",
-        contact: "contact.html"
-    };
+        contact: "contact.html",
+        game: "game.html"    };
     const filePath = contentMap[category] || "welcome.html"; // Default to a welcome file if category not found
 
     fetch(filePath)
