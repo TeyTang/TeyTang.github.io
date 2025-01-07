@@ -201,7 +201,7 @@ h1 {
     position: absolute; /* Position relative to the lightbox */
     top: 10px; /* Distance from the top */
     right: 50%; /* Distance from the right */ 
-    color: white; /* Text color */
+    color: red; /* Text color */
     font-size: 30px; /* Font size */
     cursor: pointer; /* Pointer cursor on hover */
     background: none; /* No background */
