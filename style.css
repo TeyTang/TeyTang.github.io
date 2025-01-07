@@ -151,11 +151,20 @@ h1 {
     font-size: 16px;
 }
 
-.pdf-viewer iframe {
-    margin: 20px auto;
-    border: 1px solid #ccc;
+
+.pdf-viewer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Optional if you want vertical alignment */
+    padding: 20px;
 }
 
+.pdf-viewer iframe {
+    border: 1px solid #ccc;
+    width: 90%; /* Set desired width */
+    height: 500px; /* Set desired height */
+}
 
 
 .gallery {
