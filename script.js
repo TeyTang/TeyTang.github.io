@@ -7,15 +7,16 @@ function toggleMenu() {
 }
 // Function to display the selected certificate
 function displayCertificate() {
-    const dropdown = document.getElementById("certDropdown");
-    const pdfViewer = document.getElementById("pdfViewer");
-    const selectedValue = dropdown.value;
-
-    if (selectedValue) {
-        pdfViewer.src = selectedValue; // Update iframe src
-        pdfViewer.style.display = "block"; // Ensure iframe is visible
-    } else {
-        pdfViewer.style.display = "none"; // Hide iframe if no selection
+    // Get the selected option's value from the dropdown
+    var certDropdown = document.getElementById('certDropdown');
+    var selectedCert = certDropdown.value;
+    
+    // Get the iframe element
+    var iframe = document.querySelector('.pdf-viewer iframe');
+    
+    // If a certificate is selected, update the iframe source, otherwise do nothing
+    if (selectedCert) {
+        iframe.src = selectedCert;
     }
 }
 // Load welcome content on page load
