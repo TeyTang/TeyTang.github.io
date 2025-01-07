@@ -157,7 +157,7 @@ h1 {
     justify-content: center;        /* Center horizontally */
     align-items: center;            /* Center vertically */
     flex-direction: column;         /* Stack items vertically (optional) */
-    padding: 20px;                  /* Add some padding around the container */
+    padding: 5px;                  /* Add some padding around the container */
     height: 100vh;                  /* Set the viewer to fill the viewport height */
     box-sizing: border-box;         /* Include padding in height calculation */
 }
@@ -166,7 +166,7 @@ h1 {
     border: 1px solid #ccc;         /* Add a border around the iframe */
     width: 90%;                     /* Set the iframe width to 90% of the container */
     max-width: 100%;                /* Prevent overflow beyond the container */
-    height:  90%; /* Use available height minus padding */                 /* Set a fixed height for the iframe */
+    height:  height: calc(100vh - 10px); /* Use available height minus padding */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for styling */
 }
 
