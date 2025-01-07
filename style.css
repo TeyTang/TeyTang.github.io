@@ -139,16 +139,23 @@ h1 {
     padding: 15px; /* Padding inside each item */
     margin: 15px 0; /* Space */
 }
-
 .certification-container {
-    max-width: 1200px;
-    margin: auto;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#certDropdown {
+    margin: 20px;
+    padding: 10px;
+    font-size: 16px;
 }
 
 .pdf-viewer iframe {
-    width: 100%; /* Make the iframe responsive */
-    height: 400px; /* Keep the height fixed or adjust as needed */
+    margin: 20px auto;
+    border: 1px solid #ccc;
 }
+
 
 
 .gallery {
