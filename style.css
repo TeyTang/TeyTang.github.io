@@ -123,7 +123,7 @@ body {
 
 .experience-container {
     width: 100%; /* Allow the container to take full width */
-    max-width: 800px; /* Still limit the width for larger screens */
+    max-width: 1000px; /* Still limit the width for larger screens */
     margin: 0 auto; /* Center the container */
     padding: 10px; /* Add some padding for spacing */
     box-sizing: border-box; /* Include padding in width calculation */
@@ -141,11 +141,95 @@ h1 {
 }
 
 .certification-container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: auto;
 }
 
 .pdf-viewer iframe {
     width: 100%; /* Make the iframe responsive */
     height: 400px; /* Keep the height fixed or adjust as needed */
+}
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.gallery-item {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+.lightbox { 
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 50%; /* Position from the left */
+    top: 50%; /* Position from the top */
+    width: 800px; /* Fixed width */
+    height: 600px; /* Fixed height */
+    transform: translate(-50%, -50%); /* Center the lightbox */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    overflow: hidden; /* Hide overflow */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+.lightbox-content {
+    max-width: 100%; /* Responsive width */
+    max-height: 100%; /* Responsive height */
+    display: block; /* Ensure the image is displayed */
+    margin: auto; /* Center the image */
+}
+
+.close {
+    position: absolute; /* Position relative to the lightbox */
+    top: 10px; /* Distance from the top */
+    right: 50%; /* Distance from the right */ 
+    color: white; /* Text color */
+    font-size: 30px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    background: none; /* No background */
+    border: none; /* No border */
+    outline: none; /* No outline */
+    z-index: 1001; /* Ensure it is above the lightbox */
+}
+
+.close:hover {
+    color: #ff0000; /* Change color on hover (optional) */
+}
+
+ .prev, .next {
+    position: absolute; /* Position buttons */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for button height */
+    color: white; /* Button color */
+    font-size: 24px; /* Button size */
+    background: none; /* No background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+}
+
+
+
+.prev {
+    left: 20px; /* Position previous button */
+}
+
+.next {
+    right: 60px; /* Position next button */
+}
+
+.caption {
+    color: white; /* Caption text color */
+    text-align: center; /* Center caption */
+    margin-top: 10px; /* Space above caption */
 }
