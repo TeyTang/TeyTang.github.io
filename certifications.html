@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 </head>
 <body onload="displayCertificate()">
-    <div class="certification-container">
-        <h1>Certifications</h1>
-        <div class="experience-item">
-        
-        <label for="certDropdown">Select a Certificate:</label>
-        <select id="certDropdown" onchange="displayCertificate()">
-            <option value="">--Select a Certificate--</option>
+  <div class="certification-container">
+    <h1>Certifications</h1>
+    <label for="certDropdown">Select a Certificate:</label>
+    <select id="certDropdown" onchange="displayCertificate()">
+        <option value="">--Select a Certificate--</option>
+   
             <option value="cert/Advanced Electrical Troubleshooting.pdf" selected>Advanced Electrical Troubleshooting</option>
             <option value="cert/Electricity Fundamentals.pdf">Electricity Fundamentals</option>
             <option value="cert/EPA 608 Universal Certificate.pdf">EPA 608 Universal Certificate</option>
@@ -76,14 +75,11 @@
             <option value="cert/Complete Android Development (Part 1 of 29)- Get Started.pdf">Complete Android Development (Part 1 of 29)- Get Started</option>
            
             
-        </select>
-    </div> 
-    <div class="experience-item">
-        <div class="pdf-viewer">
-            <iframe id="pdfViewer" src="cert/Advanced Electrical Troubleshooting.pdf" width="600" height="400" style="display:block;"></iframe>
-        </div>
+           </select>
+    <div class="pdf-viewer">
+        <iframe id="pdfViewer" src="" width="100%" height="600" style="display: none;"></iframe>
     </div>
-    </div>
+</div> 
 
     <script src="script.js"></script> <!-- Link to your JavaScript file -->
 </body>
