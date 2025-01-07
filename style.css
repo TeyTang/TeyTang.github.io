@@ -153,17 +153,21 @@ h1 {
 
 
 .pdf-viewer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Optional if you want vertical alignment */
-    padding: 20px;
+    display: flex;                  /* Enable flexbox */
+    justify-content: center;        /* Center horizontally */
+    align-items: center;            /* Center vertically */
+    flex-direction: column;         /* Stack items vertically (optional) */
+    padding: 20px;                  /* Add some padding around the container */
+    height: 100vh;                  /* Set the viewer to fill the viewport height */
+    box-sizing: border-box;         /* Include padding in height calculation */
 }
 
 .pdf-viewer iframe {
-    border: 1px solid #ccc;
-    width: 90%; /* Set desired width */
-    height: 500px; /* Set desired height */
+    border: 1px solid #ccc;         /* Add a border around the iframe */
+    width: 90%;                     /* Set the iframe width to 90% of the container */
+    max-width: 100%;                /* Prevent overflow beyond the container */
+    height:  height: calc(100vh - 40px); /* Use available height minus padding */                 /* Set a fixed height for the iframe */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for styling */
 }
 
 
