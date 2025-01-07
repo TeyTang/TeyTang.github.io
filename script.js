@@ -5,7 +5,19 @@ function toggleMenu() {
     menu.classList.toggle("open");
     backdrop.classList.toggle("active");
 }
+// Function to display the selected certificate
+function displayCertificate() {
+    const dropdown = document.getElementById("certDropdown");
+    const pdfViewer = document.getElementById("pdfViewer");
+    const selectedValue = dropdown.value;
 
+    if (selectedValue) {
+        pdfViewer.src = selectedValue; // Update iframe src
+        pdfViewer.style.display = "block"; // Ensure iframe is visible
+    } else {
+        pdfViewer.style.display = "none"; // Hide iframe if no selection
+    }
+}
 // Load welcome content on page load
 function loadWelcomeContent() {
     const content = document.getElementById("main-content");
