@@ -150,25 +150,63 @@ h1 {
     padding: 10px;
     font-size: 16px;
 }
-
-
+/*pdf---------------------*/
 .pdf-viewer {
-    display: flex;                  /* Enable flexbox */
-    justify-content: center;        /* Center horizontally */
-    align-items: center;            /* Center vertically */
-    flex-direction: column;         /* Stack items vertically (optional) */
-    padding: 5px;                  /* Add some padding around the container */
-    height: 100vh;                  /* Set the viewer to fill the viewport height */
-    box-sizing: border-box;         /* Include padding in height calculation */
+    display: flex;                  
+    justify-content: center;        
+    align-items: center;            
+    flex-direction: column;         
+    padding: 5px;                  
+    height: 100vh;                  
+    box-sizing: border-box;         
 }
 
 .pdf-viewer iframe {
-    border: 1px solid #ccc;         /* Add a border around the iframe */
-    width: 100%;                     /* Set the iframe width to 90% of the container */
-    max-width: 95%;                /* Prevent overflow beyond the container */
-    height:  100vh;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for styling */
+    border: 1px solid #ccc;         
+    width: 100%;                     
+    max-width: 95%;                
+    height: 80vh; /* Adjust height to allow for other elements */
+    max-height: 90vh; /* Prevent overflow on smaller screens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
+
+/* Add a download button style */
+.download-button {
+    margin-top: 10px; /* Space between iframe and button */
+    padding: 10px 20px; /* Button padding */
+    background-color: #007BFF; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .pdf-viewer {
+        padding: 10px; /* More padding on smaller screens */
+    }
+
+    .pdf-viewer iframe {
+        height: 60vh; /* Reduce height on smaller screens */
+    }
+
+    .download-button {
+        font-size: 14px; /* Smaller font size for the button */
+    }
+}
+
+@media (max-width: 480px) {
+    .pdf-viewer iframe {
+        height: 50vh; /* Further reduce height on very small screens */
+    }
+
+    .download-button {
+        padding: 8px 16px; /* Smaller padding for the button */
+    }
+}
+/*pdf---------------------*/
 
 
 .gallery {
