@@ -166,7 +166,7 @@ h1 {
     border: 1px solid #ccc;         /* Add a border around the iframe */
     width: 100%;                     /* Set the iframe width to 90% of the container */
     max-width: 95%;                /* Prevent overflow beyond the container */
-    height:  600px;
+    height:  100vh;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for styling */
 }
 
