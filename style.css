@@ -164,9 +164,9 @@ h1 {
 
 .pdf-viewer iframe {
     border: 1px solid #ccc;         /* Add a border around the iframe */
-    width: 90%;                     /* Set the iframe width to 90% of the container */
-    max-width: 100%;                /* Prevent overflow beyond the container */
-    height:  height: calc(100vh - 10px); /* Use available height minus padding */
+    width: 100%;                     /* Set the iframe width to 90% of the container */
+    max-width: 95%;                /* Prevent overflow beyond the container */
+    height:  600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for styling */
 }
 
