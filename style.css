@@ -157,7 +157,7 @@ h1 {
     align-items: center;            
     flex-direction: column;         
     padding: 5px;                  
-    height: 100vh;                  
+    height: auto;                  
     box-sizing: border-box;         
 }
 
@@ -165,7 +165,7 @@ h1 {
     border: 1px solid #ccc;         
     width: 100%;                     
     max-width: 95%;                
-    height: 80vh; /* Adjust height to allow for other elements */
+    height: 60vh; /* Adjust height to allow for other elements */
     max-height: 90vh; /* Prevent overflow on smaller screens */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
