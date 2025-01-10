@@ -190,7 +190,7 @@ h1 {
 
     .pdf-viewer iframe {
         height: 60vh; /* Reduce height on smaller screens */
-        width:  80vh;
+        
     }
 
     .download-button {
@@ -201,7 +201,7 @@ h1 {
 @media (max-width: 480px) {
     .pdf-viewer iframe {
         height: 50vh; /* Further reduce height on very small screens */
-        width:  80vh;
+        
     }
 
     .download-button {
