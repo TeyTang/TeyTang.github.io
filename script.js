@@ -131,6 +131,8 @@ function initializeGallery() {
 // Call loadWelcomeContent when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () =>{
     loadWelcomeContent(); // Load the welcome content
+     // Call the function to sort the dropdown
+    sortDropdown('certDropdown');
 });
 function sortDropdown(dropdownId) {
         const select = document.getElementById(dropdownId);
@@ -146,5 +148,4 @@ function sortDropdown(dropdownId) {
         options.forEach(option => select.add(option));
     }
 
-    // Call the function to sort the dropdown
-    sortDropdown('certDropdown');
+   
