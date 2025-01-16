@@ -128,12 +128,6 @@ function initializeGallery() {
         }
     });
 }
-// Call loadWelcomeContent when the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", () =>{
-    loadWelcomeContent(); // Load the welcome content
-     // Call the function to sort the dropdown
-    sortDropdown('certDropdown');
-});
 function sortDropdown(dropdownId) {
         const select = document.getElementById(dropdownId);
         const options = Array.from(select.options);
@@ -147,5 +141,12 @@ function sortDropdown(dropdownId) {
         // Append sorted options
         options.forEach(option => select.add(option));
     }
+
+// Call loadWelcomeContent when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", () =>{
+    loadWelcomeContent(); // Load the welcome content
+     // Call the function to sort the dropdown
+    sortDropdown('certDropdown');
+});
 
    
