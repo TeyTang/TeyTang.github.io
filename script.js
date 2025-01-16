@@ -132,3 +132,19 @@ function initializeGallery() {
 document.addEventListener("DOMContentLoaded", () =>{
     loadWelcomeContent(); // Load the welcome content
 });
+function sortDropdown(dropdownId) {
+        const select = document.getElementById(dropdownId);
+        const options = Array.from(select.options);
+
+        // Sort options alphabetically
+        options.sort((a, b) => a.text.localeCompare(b.text));
+
+        // Clear existing options
+        select.innerHTML = '';
+
+        // Append sorted options
+        options.forEach(option => select.add(option));
+    }
+
+    // Call the function to sort the dropdown
+    sortDropdown('myDropdown');
