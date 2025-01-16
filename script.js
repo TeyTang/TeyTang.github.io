@@ -147,4 +147,4 @@ function sortDropdown(dropdownId) {
     }
 
     // Call the function to sort the dropdown
-    sortDropdown('myDropdown');
+    sortDropdown('certDropdown');
