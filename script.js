@@ -210,7 +210,31 @@ function showGallery() {
       <button onclick="nextImage()">→</button>
     </div>
   `;
+
+  addSwipeListeners();
 }
+function addSwipeListeners() {
+  const img = document.getElementById("galleryImage");
+  let startX = 0;
+
+  img.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  img.addEventListener("touchend", (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = endX - startX;
+
+    if (Math.abs(diff) > 50) { // minimum swipe distance
+      if (diff > 0) {
+        prevImage();
+      } else {
+        nextImage();
+      }
+    }
+  });
+}
+
 
 function nextImage() {
   currentIndex = (currentIndex + 1) % galleryImages.length;
