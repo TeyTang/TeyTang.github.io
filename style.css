@@ -84,8 +84,9 @@ iframe + p {
 }
 
 .gallery img {
-  max-width: 80%;
+  max-width: 70%;
   height: auto;
+  touch-action: pan-y;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
