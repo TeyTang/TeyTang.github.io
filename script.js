@@ -67,7 +67,7 @@ function showSection(section) {
   if (section === "about") {
     showAboutMe();
   } else if (section === "skills") {
-    mainContent.innerHTML = "<h2>Skills</h2><ul><li>Programming Languages: Swift, Dart,Python, Java, C, C++, Python, MATLAB, Assembly</li><li>Web Development: HTML, CSS, PHP, MySQL, JavaScript</li><li>Mobile Development: Flutter, Xcode, Android Studio, Visual studio</li><li>Game Development: 2D & 3D game development, animations, sound effects</li><li>Microcontrollers: Arduino, basic robotics</li><li>Tools & Technologies: GitHub, XAMPP, Visual Basic, CNC programming</li><li>Other Skills: Computer repairs, networking basics, data structures, LaTeX</li></ul>";
+    mainContent.innerHTML = "<h2>Skills</h2><ul><li>Programming Languages: Swift, Dart,Python, Java, C, C++, Python, MATLAB, Assembly</li><li>Web Development: HTML, CSS, PHP, MySQL, JavaScript</li><li>Mobile Development: Flutter, Xcode, Android Studio, Visual studio</li><li>Game Development: 2D & 3D game development, animations, sound effects</li><li>Microcontrollers: Arduino, basic robotics</li><li>Tools & Technologies: GitHub, XAMPP, Visual Basic, CNC programming</li><li>Other Skills: Classic car restoration, Mechanic, Electrical troubleshooting, HVAC for both residential and commercial, Computer repairs, networking basics, data structures, LaTeX</li></ul>";
   } else if (section === "experience") {
     const experiences = [
       {
