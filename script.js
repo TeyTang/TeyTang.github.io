@@ -248,21 +248,44 @@ function prevImage() {
 
 function loadCertList(select) {
   fetch("certs.json")
-    .then((res) => res.json()) 
+    .then((res) => res.json())
     .then((data) => {
       certs = data;
 
-      certs.forEach((cert) => {
-        let option = document.createElement("option");
+      // ✅ Sort alphabetically by name (case-insensitive)
+      certs.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
 
+      // Clear existing options
+      select.innerHTML = "";
+
+      // ✅ Choose your default certification ID here:
+      const defaultCertId = "cert1"; // <-- Change this to match one in certs.json
+
+      // Determine if the default cert exists
+      const defaultCert = certs.find(cert => cert.id === defaultCertId);
+
+      // Populate dropdown
+      certs.forEach((cert) => {
+        const option = document.createElement("option");
         option.value = cert.id;
         option.text = cert.name;
-
         select.appendChild(option);
       });
-    })
-    .catch((error) => console.error(error));
 
+      if (defaultCert) {
+        // ✅ Automatically select and display the default certification
+        select.value = defaultCert.id;
+        loadCert(defaultCert.id);
+      } else {
+        // If no default cert found, keep the placeholder option
+        const placeholder = document.createElement("option");
+        placeholder.value = "";
+        placeholder.text = "--Choose a certification/diploma--";
+        placeholder.selected = true;
+        select.prepend(placeholder);
+      }
+    })
+    .catch((error) => console.error("Error loading certifications:", error));
 }
 
 function loadCert(id) {
