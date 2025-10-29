@@ -252,41 +252,39 @@ function loadCertList(select) {
     .then((data) => {
       certs = data;
 
-      //Sort alphabetically by name (case-insensitive)
+      // Sort alphabetically (case-insensitive)
       certs.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
 
-      // Clear existing options
+      // Define the default certification ID
+      const defaultCertId = "tcfafdc"; // The complete Flutter And Firebase Developer course
+
+      // Clear dropdown first
       select.innerHTML = "";
 
-      //default certification ID here:
-      const defaultCertId = "tcfafdc"; // <-- Change this to match one in certs.json
+      // Add placeholder (always first)
+      const placeholder = document.createElement("option");
+      placeholder.value = "";
+      placeholder.text = "--Choose a certification/diploma--";
+      select.appendChild(placeholder);
 
-      // Determine if the default cert exists
-      const defaultCert = certs.find(cert => cert.id === defaultCertId);
-
-      // Populate dropdown
-      certs.forEach((cert) => {
+      // Populate dropdown with sorted certifications
+      certs.forEach(cert => {
         const option = document.createElement("option");
         option.value = cert.id;
         option.text = cert.name;
         select.appendChild(option);
       });
 
+      // Try to set and load the default certificate
+      const defaultCert = certs.find(cert => cert.id === defaultCertId);
       if (defaultCert) {
-        // Automatically select and display the default certification
         select.value = defaultCert.id;
         loadCert(defaultCert.id);
-      } else {
-        // If no default cert found, keep the placeholder option
-        const placeholder = document.createElement("option");
-        placeholder.value = "";
-        placeholder.text = "--Choose a certification/diploma--";
-        placeholder.selected = true;
-        select.prepend(placeholder);
       }
     })
-    .catch((error) => console.error("Error loading certifications:", error));
+    .catch(error => console.error("Error loading certifications:", error));
 }
+
 
 function loadCert(id) {
   const cert = certs.find((item) => item.id === id);
