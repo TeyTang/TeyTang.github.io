@@ -165,8 +165,8 @@ function showCertSection() {
   mainContent.innerHTML = `
   <div class="welcome">
       <img src="images/TeyTang.png" alt="My Avatar" class="avatar">
-      <h2>These are all of the certifications and diplomas I collected over the years.</h2>
-      <p>Please select an item from the drop-down menu to see for yourself.</p>
+      <h2>These are the certifications and diplomas I’ve gathered throughout my journey.</h2>
+      <p>Choose one from the drop-down menu to take a closer look!</p>
     </div>
     <h2>Certifications</h2>
     <label for="certSelect">Select a certification/diploma:</label>
