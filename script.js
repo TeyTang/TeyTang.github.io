@@ -36,10 +36,15 @@ function showAboutMe() {
     <div class="about-section">
       <h2>About Me</h2>
       <p>
-        Detail-oriented and technically skilled Computer Science graduate with a focus on web, software, and app development.
-        Experienced in mobile app development using Flutter and native languages like Swift. Passionate about learning new
-        technologies, including microcontrollers and game development. Proven ability to work collaboratively in teams and adapt
-        to changing environments.
+        Hello! It’s great to meet you. I’m a first-generation Montagnard American with a lifelong passion for technology. Ever since I was a kid, I’ve been fascinated by how things work — taking apart gadgets, reverse-engineering them, and exploring anything I could get my hands on.
+
+That curiosity evolved into a love for learning, especially in all things tech — from cars and electrical systems to computers and IT. I’m a self-driven learner who constantly seeks opportunities to grow and improve.
+
+When it came time for college, pursuing a degree in Computer Science was a natural choice. Today, I’m a detail-oriented and technically skilled Computer Science graduate specializing in web, software, and app development. I have hands-on experience in mobile app development using Flutter and native languages like Swift, and I’m passionate about exploring new technologies like microcontrollers and game development.
+
+I also run a Facebook page called Mobile Games by Tey, where I share my game development projects. Although my developer accounts on Apple and Google Play are currently inactive and some of my older games are no longer available for download, you can still view my past projects there.
+
+Game development remains a passion of mine — this is just a temporary pause as I focus on building a career where my skills can make the biggest impact.
       </p>
     </div>
   `;
