@@ -252,14 +252,14 @@ function loadCertList(select) {
     .then((data) => {
       certs = data;
 
-      // ✅ Sort alphabetically by name (case-insensitive)
+      //Sort alphabetically by name (case-insensitive)
       certs.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
 
       // Clear existing options
       select.innerHTML = "";
 
-      // ✅ Choose your default certification ID here:
-      const defaultCertId = "cert1"; // <-- Change this to match one in certs.json
+      //default certification ID here:
+      const defaultCertId = "tcfafdc"; // <-- Change this to match one in certs.json
 
       // Determine if the default cert exists
       const defaultCert = certs.find(cert => cert.id === defaultCertId);
@@ -273,7 +273,7 @@ function loadCertList(select) {
       });
 
       if (defaultCert) {
-        // ✅ Automatically select and display the default certification
+        // Automatically select and display the default certification
         select.value = defaultCert.id;
         loadCert(defaultCert.id);
       } else {
