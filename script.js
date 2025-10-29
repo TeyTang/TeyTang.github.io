@@ -10,8 +10,8 @@ function showWelcome() {
   mainContent.innerHTML = `
     <div class="welcome">
       <img src="images/TeyTang.png" alt="My Avatar" class="avatar">
-      <h2>Hello, I'm Tey Tang!</h2>
-      <p>Welcome to my interactive resume. Use the menu to explore my skills, experience, and more.</p>
+      <h2>Hello, my name is Tey Tang!</h2>
+      <p>Welcome to my interactive resume. Use the menu (≡)  to explore my skills, experience, and more. Also please visit my LinkedIn account if you want to contact me. I often don't answer unknown phone calls so that is the best way to reach me.</p>
       <div class="social-links">
         <a href=${linkedinURL} target="_blank" title="LinkedIn">
           <i class="fab fa-linkedin"></i>
