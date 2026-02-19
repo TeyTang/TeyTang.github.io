@@ -1,5 +1,10 @@
 [
   {
+    "id": "sqlcert",
+    "name": "Certified SQL Developer",
+    "file": "certs/certificate_of_completion_sql.pdf"
+  },
+  {
     "id": "tcfafdc",
     "name": "The complete Flutter And Firebase Developer course",
     "file": "certs/FlutterAndFirebaseCert.pdf"
