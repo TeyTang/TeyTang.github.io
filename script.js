@@ -262,7 +262,7 @@ function loadCertList(select) {
       certs.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
 
       // Define the default certification ID
-      const defaultCertId = "tcfafdc"; // The complete Flutter And Firebase Developer course
+      const defaultCertId = "sqlcert"; // The complete Flutter And Firebase Developer course
 
       // Clear dropdown first
       select.innerHTML = "";
