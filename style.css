@@ -414,7 +414,7 @@ iframe + p {
   width: clamp(180px, 28vw, 240px);
   height: clamp(180px, 28vw, 240px);
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center top;
   border-radius: 50%;
   border: 3px solid #d6ebe5;
   margin-bottom: 1rem;
