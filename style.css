@@ -175,6 +175,10 @@ main {
   margin-top: 1.5rem;
 }
 
+.hero-downloads {
+  margin-top: 0.9rem;
+}
+
 .action-button {
   border: none;
   border-radius: 999px;
@@ -197,6 +201,17 @@ main {
 .action-button:focus-visible {
   transform: translateY(-1px);
   opacity: 0.96;
+}
+
+.text-download {
+  border: none;
+  background: none;
+  color: var(--teal-dark);
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.18rem;
 }
 
 .hero-highlights,

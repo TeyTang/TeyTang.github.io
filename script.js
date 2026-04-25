@@ -1,233 +1,114 @@
 const menuToggle = document.getElementById("menuToggle");
 const sideMenu = document.getElementById("sideMenu");
 const mainContent = document.getElementById("mainContent");
+const siteTitle = document.getElementById("siteTitle");
+const pageDescription = document.getElementById("pageDescription");
 
-const externalLinks = {
-  linkedin: "https://www.linkedin.com/in/tey-tang-120a26176",
-  githubProfile: "https://github.com/TeyTang",
-  portfolioRepo: "https://github.com/TeyTang/TeyTang.github.io",
-  portfolioLive: "https://teytang.github.io/"
-};
+const portfolioData = window.PORTFOLIO_DATA;
 
-const portfolioData = {
-  hero: {
-    title: "Software Developer focused on web apps, mobile apps, automation, and technical problem-solving.",
-    intro:
-      "Computer Science graduate with hands-on experience in Flutter app development, technical troubleshooting, and building practical solutions across software and hardware environments.",
-    highlights: [
-      {
-        title: "Mobile App Development",
-        detail: "Built Flutter applications, integrated APIs, and collaborated with backend teams on delivery and debugging."
-      },
-      {
-        title: "Technical Systems",
-        detail: "Background in Arduino, CNC programming, electrical troubleshooting, and real-world automation workflows."
-      },
-      {
-        title: "Portfolio Focus",
-        detail: "Combining software development with practical problem-solving across web, mobile, and technical production environments."
-      }
-    ]
-  },
-  about: [
-    "I’m a first-generation Montagnard American with a lifelong curiosity about how systems work, from electronics and vehicles to computers and software.",
-    "That curiosity led me to study Computer Science and build a career around learning quickly, solving technical problems, and turning ideas into working products.",
-    "My experience spans Flutter mobile development, web technologies, backend API collaboration, CNC and automation work, and hands-on troubleshooting in production environments.",
-    "I also created and shared game projects through Mobile Games by Tey. While some older releases are no longer live, game development, mobile apps, and technical experimentation remain a core part of how I learn and build."
-  ],
-  skills: [
-    {
-      title: "Languages",
-      items: ["Swift", "Dart", "Python", "Java", "C", "C++", "MATLAB", "Assembly", "PHP", "JavaScript", "Visual Basic", "LaTeX"]
-    },
-    {
-      title: "Frontend",
-      items: ["HTML", "CSS", "JavaScript", "Responsive web UI", "Single-page interface development"]
-    },
-    {
-      title: "Mobile Development",
-      items: ["Flutter", "Xcode", "Android Studio", "Mobile UI development", "2D & 3D game development", "Animations", "Sound effects"]
-    },
-    {
-      title: "Backend / Databases",
-      items: ["PHP", "MySQL", "SQL", "REST API integration", "State management", "Data structures"]
-    },
-    {
-      title: "Tools",
-      items: ["GitHub", "XAMPP", "Visual Studio", "CNC programming", "Computer repairs"]
-    },
-    {
-      title: "Technical Systems",
-      items: [
-        "Arduino",
-        "Basic robotics",
-        "Electrical troubleshooting",
-        "HVAC for residential and commercial systems",
-        "Networking basics",
-        "Mechanic work",
-        "Classic car restoration"
-      ]
-    }
-  ],
-  projects: [
-    {
-      title: "Personal Portfolio Website",
-      description:
-        "A responsive GitHub Pages portfolio designed to present software experience, certifications, technical background, and selected project work in a clear developer-focused format.",
-      stack: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-      links: [
-        { label: "GitHub Repo", url: externalLinks.portfolioRepo, fallback: "Repository unavailable" },
-        { label: "Live Demo", url: externalLinks.portfolioLive, fallback: "Demo unavailable" }
-      ],
-      features: [
-        "Built as a lightweight static site with dynamic section rendering and no framework dependency.",
-        "Preserved the certification viewer and swipe-enabled gallery while improving maintainability.",
-        "Refactored portfolio content into clearer data objects so future updates are lower-risk."
-      ]
-    },
-    {
-      title: "Mobile Games by Tey",
-      description:
-        "Independent mobile game projects and prototypes focused on gameplay experimentation, creative iteration, and learning through hands-on release work.",
-      stack: ["Mobile game prototyping", "Gameplay design", "Animation", "Sound integration", "App release workflows"],
-      links: [
-        { label: "GitHub Repo", url: "", fallback: "Repositories are not currently public" },
-        { label: "Live Demo", url: "", fallback: "Legacy store releases are currently inactive" }
-      ],
-      features: [
-        "Built and iterated on mobile game concepts with attention to player flow, polish, and presentation.",
-        "Worked through the challenges of asset integration, animation, and sound in mobile experiences.",
-        "Used independent project work to strengthen product thinking, iteration speed, and creative problem-solving."
-      ]
-    },
-    {
-      title: "Flutter Mobile App Work",
-      description:
-        "Professional mobile app development experience delivering Flutter features, API integrations, and production fixes in collaboration with backend teams.",
-      stack: ["Flutter", "Dart", "REST APIs", "App state management", "Backend collaboration"],
-      links: [
-        { label: "GitHub Repo", url: "", fallback: "Client work is not publicly available" },
-        { label: "Live Demo", url: "", fallback: "Production apps were maintained as private work" }
-      ],
-      features: [
-        "Implemented app features and UI updates in Flutter across multiple screens and user flows.",
-        "Integrated APIs, worked through technical issues with backend teams, and improved data handling reliability.",
-        "Adjusted state management patterns and resolved bugs to support smoother app performance."
-      ]
-    },
-    {
-      title: "Arduino / CNC / Technical Automation Projects",
-      description:
-        "Hands-on technical projects spanning Arduino, CNC programming, industrial equipment support, and real-world troubleshooting where software and hardware meet.",
-      stack: ["Arduino", "CNC programming", "Electrical systems", "Basic robotics", "Technical troubleshooting"],
-      links: [
-        { label: "GitHub Repo", url: "", fallback: "Code varies by build and is not packaged as a public repo" },
-        { label: "Live Demo", url: "", fallback: "Projects are physical or on-site implementations" }
-      ],
-      features: [
-        "Connected software logic and machine behavior in practical production and technical environments.",
-        "Supported troubleshooting across electrical, mechanical, and process-related issues.",
-        "Applied a builder mindset to automation work where reliability and hands-on debugging matter."
-      ]
-    }
-  ],
-  experience: [
-    {
-      title: "Machine Operator – TBMNC",
-      duration: "September 2023 - Present",
-      responsibilities: [
-        "Train team members on machine workflows, process standards, and production routines.",
-        "Partner with maintenance teams to troubleshoot line issues and support equipment uptime.",
-        "Inspect, charge, and test electric-vehicle batteries while maintaining process accuracy.",
-        "Track battery cell status in PLaPLaGo and communicate issues clearly across the line.",
-        "Lead training sessions and technical communication in fast-paced manufacturing environments."
-      ]
-    },
-    {
-      title: "Technician Contractor – ATM Works",
-      duration: "December 2022 - March 2023",
-      responsibilities: [
-        "Installed, configured, and programmed Genmega and Hyosung ATM machines at client sites.",
-        "Diagnosed hardware, setup, and service issues in the field across multiple states."
-      ]
-    },
-    {
-      title: "App Developer – Axny Group",
-      duration: "September 2021 - September 2022",
-      responsibilities: [
-        "Built and maintained Flutter mobile application features in a collaborative development environment.",
-        "Integrated APIs and worked with backend teams to troubleshoot technical issues and improve reliability.",
-        "Refined app state management patterns, resolved bugs, and supported overall app performance."
-      ]
-    },
-    {
-      title: "Technician – Standard Tools and Equipment Co",
-      duration: "February 2020 - September 2021",
-      responsibilities: [
-        "Wired and assembled air make-up units for paint booth systems using technical specifications and diagrams.",
-        "Developed CNC machine software and programming updates to improve production efficiency."
-      ]
-    }
-  ],
-  education: [
-    {
-      school: "University of North Carolina at Greensboro",
-      degree: "Bachelor in Computer Science",
-      duration: "2015 – 2019"
-    },
-    {
-      school: "Guilford College",
-      degree: "Computer Science",
-      duration: "2013 – 2015"
-    },
-    {
-      school: "Walter Hines Page High School",
-      degree: "High School Diploma",
-      duration: "2009 – 2013"
-    }
-  ]
-};
+if (!portfolioData) {
+  throw new Error("portfolio-data.js did not load correctly.");
+}
 
-const galleryImages = [
-  "gallery/image1.jpeg",
-  "gallery/image2.jpeg",
-  "gallery/image3.jpeg",
-  "gallery/image4.jpeg",
-  "gallery/image5.jpeg",
-  "gallery/image6.jpeg",
-  "gallery/image7.jpeg",
-  "gallery/image8.jpeg",
-  "gallery/image9.jpeg",
-  "gallery/image10.jpeg",
-  "gallery/image11.jpeg",
-  "gallery/image12.jpeg",
-  "gallery/image13.jpeg",
-  "gallery/image14.jpeg",
-  "gallery/image15.jpeg",
+const socialLinks = [
+  { key: "linkedin", icon: "fab fa-linkedin", label: "LinkedIn" },
+  { key: "github", icon: "fab fa-github", label: "GitHub" }
 ];
+
+const galleryImages = portfolioData.galleryImages || [];
 
 let certs = [];
 let currentIndex = 0;
+
+applySiteMetadata();
 
 menuToggle.addEventListener("click", () => {
   sideMenu.classList.toggle("hidden");
 });
 
+function applySiteMetadata() {
+  if (siteTitle) {
+    siteTitle.textContent = portfolioData.site.name;
+  }
+
+  if (pageDescription) {
+    pageDescription.content = portfolioData.site.pageDescription;
+  }
+
+  document.title = portfolioData.site.pageTitle;
+}
+
 function hideMenu() {
   sideMenu.classList.add("hidden");
 }
 
+function formatUrlForDisplay(url) {
+  try {
+    const parsed = new URL(url);
+    return `${parsed.hostname.replace(/^www\./, "")}${parsed.pathname}`.replace(/\/$/, "");
+  } catch (error) {
+    return url;
+  }
+}
+
+function getResumeContactItems() {
+  const items = [];
+  const { email, phone, location, portfolio, github, linkedin } = portfolioData.contact;
+
+  if (email) {
+    items.push(email);
+  }
+
+  if (phone) {
+    items.push(phone);
+  }
+
+  if (location) {
+    items.push(location);
+  }
+
+  if (portfolio) {
+    items.push(`Portfolio: ${formatUrlForDisplay(portfolio)}`);
+  }
+
+  if (github) {
+    items.push(`GitHub: ${formatUrlForDisplay(github)}`);
+  }
+
+  if (linkedin) {
+    items.push(`LinkedIn: ${formatUrlForDisplay(linkedin)}`);
+  }
+
+  return items;
+}
+
+function getResumeProjects() {
+  const selectedTitles = portfolioData.resume.projectTitles || [];
+
+  if (!selectedTitles.length) {
+    return portfolioData.projects;
+  }
+
+  return portfolioData.projects.filter((project) => selectedTitles.includes(project.title));
+}
+
 function renderSocialLinks() {
-  return `
-    <div class="social-links">
-      <a href="${externalLinks.linkedin}" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="${externalLinks.githubProfile}" target="_blank" rel="noopener noreferrer" title="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-  `;
+  const links = socialLinks
+    .map((item) => {
+      const url = portfolioData.contact[item.key];
+      if (!url) {
+        return "";
+      }
+
+      return `
+        <a href="${url}" target="_blank" rel="noopener noreferrer" title="${item.label}">
+          <i class="${item.icon}"></i>
+        </a>
+      `;
+    })
+    .join("");
+
+  return `<div class="social-links">${links}</div>`;
 }
 
 function renderSectionHeader(title, intro) {
@@ -270,18 +151,22 @@ function showWelcome() {
   mainContent.innerHTML = `
     <section class="hero-panel">
       <div class="welcome">
-        <img src="images/TeyTang.png" alt="Portrait of Tey Tang" class="avatar">
-        <p class="eyebrow">Software Developer Portfolio</p>
-        <h2>${portfolioData.hero.title}</h2>
-        <p class="hero-copy">${portfolioData.hero.intro}</p>
+        <img src="images/TeyTang.png" alt="Portrait of ${portfolioData.site.name}" class="avatar">
+        <p class="eyebrow">${portfolioData.site.heroEyebrow}</p>
+        <h2>${portfolioData.site.roleStatement}</h2>
+        <p class="hero-copy">${portfolioData.site.heroIntro}</p>
         <div class="hero-actions">
           <button type="button" class="action-button" onclick="showSection('projects')">View Projects</button>
           <button type="button" class="action-button secondary" onclick="showSection('experience')">View Experience</button>
+          <button type="button" class="action-button secondary" onclick="downloadResumePDF()">Download Resume PDF</button>
+        </div>
+        <div class="hero-downloads">
+          <button type="button" class="text-download" onclick="downloadResumeText()">Download Resume TXT</button>
         </div>
         ${renderSocialLinks()}
       </div>
       <div class="hero-highlights">
-        ${portfolioData.hero.highlights
+        ${portfolioData.heroHighlights
           .map(
             (highlight) => `
               <article class="highlight-card">
@@ -299,10 +184,10 @@ function showWelcome() {
 function showAboutMe() {
   mainContent.innerHTML = `
     <div class="welcome welcome-compact">
-      <img src="images/TeyTang.png" alt="Portrait of Tey Tang" class="avatar">
-      <p class="eyebrow">About Me</p>
-      <h2>Developer with a builder mindset and a strong technical foundation.</h2>
-      <p class="hero-copy">I enjoy working on software that solves practical problems, especially when it involves learning new systems and making complex things easier to use.</p>
+      <img src="images/TeyTang.png" alt="Portrait of ${portfolioData.site.name}" class="avatar">
+      <p class="eyebrow">${portfolioData.site.aboutEyebrow}</p>
+      <h2>${portfolioData.site.aboutHeading}</h2>
+      <p class="hero-copy">${portfolioData.site.aboutIntro}</p>
       ${renderSocialLinks()}
     </div>
     <section class="about-section card">
@@ -313,10 +198,7 @@ function showAboutMe() {
 
 function renderSkills() {
   mainContent.innerHTML = `
-    ${renderSectionHeader(
-      "Skills",
-      "Current skills grouped into cleaner categories while keeping the original breadth across software, tools, and technical systems."
-    )}
+    ${renderSectionHeader("Skills", portfolioData.sectionCopy.skillsIntro)}
     <div class="skill-grid">
       ${portfolioData.skills
         .map(
@@ -336,10 +218,7 @@ function renderSkills() {
 
 function renderProjects() {
   mainContent.innerHTML = `
-    ${renderSectionHeader(
-      "Projects",
-      "Selected work and representative project areas across web, mobile, and technical automation. Public links are included where they are available."
-    )}
+    ${renderSectionHeader("Projects", portfolioData.sectionCopy.projectsIntro)}
     <div class="project-grid">
       ${portfolioData.projects
         .map(
@@ -373,10 +252,7 @@ function renderProjects() {
 
 function renderExperience() {
   mainContent.innerHTML = `
-    ${renderSectionHeader(
-      "Experience",
-      "Software-related work is emphasized here without overstating scope, with stronger wording around Flutter development, API work, and technical collaboration."
-    )}
+    ${renderSectionHeader("Experience", portfolioData.sectionCopy.experienceIntro)}
     ${portfolioData.experience
       .map(
         (experience) => `
@@ -395,7 +271,7 @@ function renderExperience() {
 
 function renderEducation() {
   mainContent.innerHTML = `
-    ${renderSectionHeader("Education", "Academic background supporting software development and technical problem-solving.")}
+    ${renderSectionHeader("Education", portfolioData.sectionCopy.educationIntro)}
     <div class="content-grid">
       ${portfolioData.education
         .map(
@@ -422,6 +298,7 @@ const sectionRenderers = {
 
 function showSection(section) {
   hideMenu();
+
   if (sectionRenderers[section]) {
     sectionRenderers[section]();
   }
@@ -432,10 +309,10 @@ function showCertSection() {
 
   mainContent.innerHTML = `
     <div class="welcome welcome-compact">
-      <img src="images/TeyTang.png" alt="Portrait of Tey Tang" class="avatar">
-      <p class="eyebrow">Certifications</p>
-      <h2>Technical certifications, coursework, and trade training.</h2>
-      <p class="hero-copy">Choose a certification or diploma from the list to review it directly on the site.</p>
+      <img src="images/TeyTang.png" alt="Portrait of ${portfolioData.site.name}" class="avatar">
+      <p class="eyebrow">${portfolioData.sectionCopy.certificationsEyebrow}</p>
+      <h2>${portfolioData.sectionCopy.certificationsHeading}</h2>
+      <p class="hero-copy">${portfolioData.sectionCopy.certificationsIntro}</p>
     </div>
     <section class="card">
       <label for="certSelect">Select a certification/diploma:</label>
@@ -455,8 +332,18 @@ function showGallery() {
   hideMenu();
   currentIndex = 0;
 
+  if (!galleryImages.length) {
+    mainContent.innerHTML = `
+      ${renderSectionHeader("Gallery", portfolioData.sectionCopy.galleryIntro)}
+      <section class="card">
+        <p>No gallery images are listed in portfolio-data.js yet.</p>
+      </section>
+    `;
+    return;
+  }
+
   mainContent.innerHTML = `
-    ${renderSectionHeader("Gallery", "A quick look at hands-on work, projects, and technical interests outside the written sections.")}
+    ${renderSectionHeader("Gallery", portfolioData.sectionCopy.galleryIntro)}
     <section class="gallery">
       <button type="button" onclick="prevImage()" aria-label="Previous gallery image">←</button>
       <img id="galleryImage" src="${galleryImages[currentIndex]}" alt="Gallery image 1">
@@ -469,18 +356,23 @@ function showGallery() {
 
 function addSwipeListeners() {
   const img = document.getElementById("galleryImage");
+
+  if (!img) {
+    return;
+  }
+
   let startX = 0;
 
-  img.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
+  img.addEventListener("touchstart", (event) => {
+    startX = event.touches[0].clientX;
   });
 
-  img.addEventListener("touchend", (e) => {
-    const endX = e.changedTouches[0].clientX;
-    const diff = endX - startX;
+  img.addEventListener("touchend", (event) => {
+    const endX = event.changedTouches[0].clientX;
+    const difference = endX - startX;
 
-    if (Math.abs(diff) > 50) { // minimum swipe distance
-      if (diff > 0) {
+    if (Math.abs(difference) > 50) {
+      if (difference > 0) {
         prevImage();
       } else {
         nextImage();
@@ -491,6 +383,7 @@ function addSwipeListeners() {
 
 function updateGalleryImage() {
   const galleryImage = document.getElementById("galleryImage");
+
   if (galleryImage) {
     galleryImage.src = galleryImages[currentIndex];
     galleryImage.alt = `Gallery image ${currentIndex + 1}`;
@@ -509,14 +402,10 @@ function prevImage() {
 
 function loadCertList(select) {
   fetch("certs.json")
-    .then((res) => res.json())
+    .then((response) => response.json())
     .then((data) => {
       certs = data;
-
-      // Sort alphabetically (case-insensitive)
-      certs.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
-
-      const defaultCertId = "sqlcert";
+      certs.sort((first, second) => first.name.toLowerCase().localeCompare(second.name.toLowerCase()));
 
       select.innerHTML = "";
 
@@ -532,7 +421,9 @@ function loadCertList(select) {
         select.appendChild(option);
       });
 
+      const defaultCertId = portfolioData.certifications.defaultId || "";
       const defaultCert = certs.find((cert) => cert.id === defaultCertId);
+
       if (defaultCert) {
         select.value = defaultCert.id;
         loadCert(defaultCert.id);
@@ -541,19 +432,278 @@ function loadCertList(select) {
     .catch((error) => console.error("Error loading certifications:", error));
 }
 
-
 function loadCert(id) {
   const cert = certs.find((item) => item.id === id);
   const certViewer = document.getElementById("certViewer");
 
+  if (!certViewer) {
+    return;
+  }
+
   if (cert) {
     certViewer.innerHTML = `
       <h3>${cert.name}</h3>
-      <iframe src="${cert.file}" title="${cert.name}" onerror='this.outerHTML = "<p>Unable to load PDF. <a href=\\\"${cert.file}\\\" target=\\\"_blank\\\">Click here to view directly</a>.</p>"'></iframe>
+      <iframe src="${cert.file}" title="${cert.name}" onerror='this.outerHTML = "<p>Unable to load PDF. <a href=\\"${cert.file}\\" target=\\"_blank\\">Click here to view directly</a>.</p>"'></iframe>
     `;
   } else {
     certViewer.innerHTML = "<p>Please select a certificate.</p>";
   }
+}
+
+function buildResumeText() {
+  const lines = [];
+  const resumeProjects = getResumeProjects();
+  const projectFeatureLimit = portfolioData.resume.projectFeatureLimit || 2;
+
+  lines.push(portfolioData.resume.title || portfolioData.site.name);
+  lines.push(portfolioData.resume.role || portfolioData.site.roleStatement);
+
+  const contactItems = getResumeContactItems();
+  if (contactItems.length) {
+    lines.push(contactItems.join(" | "));
+  }
+
+  lines.push("");
+  lines.push("SUMMARY");
+  lines.push(portfolioData.resume.summary);
+  lines.push("");
+  lines.push("SKILLS");
+
+  portfolioData.skills.forEach((category) => {
+    lines.push(`${category.title}: ${category.items.join(", ")}`);
+  });
+
+  lines.push("");
+  lines.push("EXPERIENCE");
+
+  portfolioData.experience.forEach((experience) => {
+    lines.push(`${experience.title} | ${experience.duration}`);
+    experience.responsibilities.forEach((item) => {
+      lines.push(`- ${item}`);
+    });
+    lines.push("");
+  });
+
+  lines.push("PROJECTS");
+
+  resumeProjects.forEach((project) => {
+    lines.push(`${project.title}`);
+    lines.push(project.description);
+    lines.push(`Tech Stack: ${project.stack.join(", ")}`);
+    project.features.slice(0, projectFeatureLimit).forEach((feature) => {
+      lines.push(`- ${feature}`);
+    });
+    const liveLink = project.links.find((link) => link.label.toLowerCase().includes("live") && link.url);
+    const repoLink = project.links.find((link) => link.label.toLowerCase().includes("github") && link.url);
+    if (repoLink) {
+      lines.push(`Repo: ${repoLink.url}`);
+    }
+    if (liveLink) {
+      lines.push(`Live: ${liveLink.url}`);
+    }
+    lines.push("");
+  });
+
+  lines.push("EDUCATION");
+
+  portfolioData.education.forEach((education) => {
+    lines.push(`${education.school} | ${education.duration}`);
+    lines.push(`${education.degree}`);
+    lines.push("");
+  });
+
+  return lines.join("\n").trim();
+}
+
+function downloadBlob(content, fileName, mimeType) {
+  const blob = new Blob([content], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+
+  link.href = url;
+  link.download = fileName;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+function downloadResumeText() {
+  hideMenu();
+  const fileName = portfolioData.contact.resumeTextFileName || "resume.txt";
+  downloadBlob(buildResumeText(), fileName, "text/plain;charset=utf-8");
+}
+
+function downloadResumePDF() {
+  hideMenu();
+
+  const { jsPDF } = window.jspdf || {};
+  if (!jsPDF) {
+    console.warn("jsPDF did not load. Falling back to the text resume download.");
+    downloadResumeText();
+    return;
+  }
+
+  const doc = new jsPDF({ unit: "pt", format: "letter" });
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const pageHeight = doc.internal.pageSize.getHeight();
+  const margin = 48;
+  const maxWidth = pageWidth - (margin * 2);
+  const textColor = [23, 50, 48];
+  const accentColor = [32, 151, 131];
+  const mutedColor = [91, 112, 107];
+  const resumeProjects = getResumeProjects();
+  const projectFeatureLimit = portfolioData.resume.projectFeatureLimit || 2;
+  let y = margin;
+
+  function ensureSpace(heightNeeded) {
+    if (y + heightNeeded > pageHeight - margin) {
+      doc.addPage();
+      y = margin;
+    }
+  }
+
+  function addWrappedText(text, options = {}) {
+    const fontSize = options.fontSize || 11;
+    const fontStyle = options.fontStyle || "normal";
+    const color = options.color || textColor;
+    const lineHeight = options.lineHeight || (fontSize * 1.35);
+    const after = options.after || 8;
+    const indent = options.indent || 0;
+    const lines = doc.splitTextToSize(text, maxWidth - indent);
+
+    ensureSpace((lines.length * lineHeight) + after);
+    doc.setFont("helvetica", fontStyle);
+    doc.setFontSize(fontSize);
+    doc.setTextColor(...color);
+    doc.text(lines, margin + indent, y);
+    y += (lines.length * lineHeight) + after;
+  }
+
+  function addSectionHeading(title) {
+    ensureSpace(36);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(13);
+    doc.setTextColor(...textColor);
+    doc.text(title.toUpperCase(), margin, y);
+    y += 10;
+    doc.setDrawColor(...accentColor);
+    doc.setLineWidth(1);
+    doc.line(margin, y, pageWidth - margin, y);
+    y += 16;
+  }
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(24);
+  doc.setTextColor(...textColor);
+  doc.text(portfolioData.resume.title || portfolioData.site.name, margin, y);
+  y += 26;
+
+  addWrappedText(portfolioData.resume.role || portfolioData.site.roleStatement, {
+    fontSize: 13,
+    fontStyle: "bold",
+    color: accentColor,
+    after: 10
+  });
+
+  const contactItems = getResumeContactItems();
+  if (contactItems.length) {
+    addWrappedText(contactItems.join(" | "), {
+      fontSize: 10,
+      color: mutedColor,
+      after: 16
+    });
+  }
+
+  addSectionHeading("Summary");
+  addWrappedText(portfolioData.resume.summary, { after: 14 });
+
+  addSectionHeading("Skills");
+  portfolioData.skills.forEach((category) => {
+    addWrappedText(`${category.title}: ${category.items.join(", ")}`, {
+      fontSize: 10.5,
+      after: 6
+    });
+  });
+
+  y += 6;
+  addSectionHeading("Experience");
+  portfolioData.experience.forEach((experience) => {
+    addWrappedText(experience.title, {
+      fontSize: 12,
+      fontStyle: "bold",
+      after: 2
+    });
+    addWrappedText(experience.duration, {
+      fontSize: 10,
+      color: mutedColor,
+      after: 6
+    });
+    experience.responsibilities.forEach((item) => {
+      addWrappedText(`- ${item}`, {
+        indent: 10,
+        after: 4
+      });
+    });
+    y += 6;
+  });
+
+  addSectionHeading("Projects");
+  resumeProjects.forEach((project) => {
+    addWrappedText(project.title, {
+      fontSize: 12,
+      fontStyle: "bold",
+      after: 3
+    });
+    addWrappedText(project.description, { after: 4 });
+    addWrappedText(`Tech Stack: ${project.stack.join(", ")}`, {
+      fontSize: 10,
+      color: mutedColor,
+      after: 5
+    });
+    project.features.slice(0, projectFeatureLimit).forEach((feature) => {
+      addWrappedText(`- ${feature}`, {
+        indent: 10,
+        after: 4
+      });
+    });
+    const repoLink = project.links.find((link) => link.label.toLowerCase().includes("github") && link.url);
+    const liveLink = project.links.find((link) => link.label.toLowerCase().includes("live") && link.url);
+
+    if (repoLink) {
+      addWrappedText(`Repo: ${repoLink.url}`, {
+        fontSize: 10,
+        color: mutedColor,
+        after: 4
+      });
+    }
+
+    if (liveLink) {
+      addWrappedText(`Live: ${liveLink.url}`, {
+        fontSize: 10,
+        color: mutedColor,
+        after: 4
+      });
+    }
+
+    y += 6;
+  });
+
+  addSectionHeading("Education");
+  portfolioData.education.forEach((education) => {
+    addWrappedText(education.school, {
+      fontSize: 12,
+      fontStyle: "bold",
+      after: 2
+    });
+    addWrappedText(`${education.degree} | ${education.duration}`, {
+      fontSize: 10.5,
+      color: mutedColor,
+      after: 8
+    });
+  });
+
+  doc.save(portfolioData.contact.resumeFileName || "resume.pdf");
 }
 
 showWelcome();
